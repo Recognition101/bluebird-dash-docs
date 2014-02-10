@@ -1,0 +1,36 @@
+{
+    "name": "bluebird-dash-docs",
+    "description": "A converter program that generates a documentation package for the Bluebird JS promise library for use with the Dash OSX app.",
+    "version": "0.1.0",
+    "homepage": "https://github.com/recognition101/bluebird-dash-docs",
+    "keywords": [
+        "bluebird",
+        "dash",
+        "osx",
+        "documentation"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/recognition101/bluebird-dash-docs"
+    },
+    "author": {
+        "name": "Recognition101",
+        "email": "darklightmw@gmail.com"
+    },
+    "main": "bluebird-dash-docs.js",
+    "engines": {
+        "node": ">= 0.10.x"
+    },
+    "dependencies": {
+        "marked": "0.3.x",
+        "request": "2.33.x",
+        "sqlite3": "2.2.x",
+        "jsdom": "0.10.x",
+        "fs-extra": "0.8.x",
+        "ent": "0.1.x"
+    },
+    "scripts": {
+        "start": "node bluebird-dash-docs.js"
+    }
+}
+
