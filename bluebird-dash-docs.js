@@ -18,6 +18,7 @@ var dirStruct = "Bluebird.docset/Contents/Resources/Documents/";
 var docsFn    = "Bluebird.docset/Contents/Resources/Documents/bb-api.html";
 var dbFn      = "Bluebird.docset/Contents/Resources/docSet.dsidx";
 var plistFn   = "Bluebird.docset/Contents/Info.plist"
+var iconFn   = "Bluebird.docset/icon.png"
 var html = "";
 
 var renderer = new marked.Renderer();
@@ -83,7 +84,7 @@ var createDatabse = function(err, window) {
                "type TEXT, path TEXT);");
         db.run("CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);");
 
-        var items = $("h1 + ul li li a");
+        var items = $("h1 ~ ul > li > ul > li > a");
         var stmt = db.prepare("INSERT OR IGNORE INTO " +
                               "searchIndex(name, type, path) " +
                               "VALUES (?, ?, ?)");
@@ -106,6 +107,7 @@ fs.remove(dirInit, function(err) {
         if (err) {return console.err(err);}
 
         fs.createReadStream('Info.plist').pipe(fs.createWriteStream(plistFn));
+        fs.createReadStream('icon.png').pipe(fs.createWriteStream(iconFn));
         readCSS();
     });
 });
