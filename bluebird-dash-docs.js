@@ -4,6 +4,18 @@ var fs      = require("fs-extra");
 var request = require('request');
 var cheerio = require('cheerio');
 
+var apiRoot   = 'http://bluebirdjs.com/docs/';
+var apiUrl    = 'http://bluebirdjs.com/docs/api-reference.html';
+var apiRelUrl = '/docs/api-reference.html';
+var dirInit   = 'Bluebird.docset';
+var dirStruct = 'Bluebird.docset/Contents/Resources/Documents/';
+var docsFn    = 'Bluebird.docset/Contents/Resources/Documents/bb-api.html';
+var dbFn      = 'Bluebird.docset/Contents/Resources/docSet.dsidx';
+var plistFn   = 'Bluebird.docset/Contents/Info.plist';
+var iconFn    = 'Bluebird.docset/icon.png';
+var styleFn   = 'style.css';
+
+//helper functions
 var requestP = function requestP(url) {
     return new Promise(function(res, rej) {
         request(url, function(err, resp, body) {
@@ -21,19 +33,6 @@ var readFileP = function readFileP(fn) {
         fs.readFile(fn, function(err, d) {return err ? rej(err) : res(d);});
     });
 };
-
-var apiRoot   = 'http://bluebirdjs.com/docs/';
-var apiUrl    = 'http://bluebirdjs.com/docs/api-reference.html';
-var apiRelUrl = '/docs/api-reference.html';
-var dirInit   = 'Bluebird.docset';
-var dirStruct = 'Bluebird.docset/Contents/Resources/Documents/';
-var docsFn    = 'Bluebird.docset/Contents/Resources/Documents/bb-api.html';
-var dbFn      = 'Bluebird.docset/Contents/Resources/docSet.dsidx';
-var plistFn   = 'Bluebird.docset/Contents/Info.plist';
-var iconFn    = 'Bluebird.docset/icon.png';
-var styleFn   = 'style.css';
-
-//helper functions
 var createDatabse = function(html) {
     var db = new sqlite3.Database(dbFn);
     var $ = cheerio.load(html);
