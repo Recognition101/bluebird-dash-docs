@@ -6,11 +6,7 @@ body {
 }
 
 code {
-    font-family: Consolas, "Andale Mono WT", "Andale Mono", 
-                 "Lucida Console", "Lucida Sans Typewriter",
-                 "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
-                 "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New",
-                 Courier, monospace;
+    font-family: 'Consolas', 'Lucida Console', 'Courier New', 'monospace';
 }
 
 a {
@@ -38,4 +34,32 @@ pre {
     border-width: 1px 1px 1px 6px;
     margin: -0.5em 0 1.1em;
     overflow-x: auto;
+    line-height: 1.4;
+}
+
+/* Highlighting */
+.highlight .kd, .highlight .k, .highlight .kc {
+    color: #4c81c9;
+    font-weight: bold;
+}
+
+.highlight .s2 {
+    color: #BE7306;
+}
+
+.highlight .c1 {
+    color: #738191;
+    font-style: italic ;
+}
+
+.highlight .nb {
+    color: #4c81c9;
+}
+
+.highlight .nf {
+    color: #0000FF;
+}
+
+.highlight .nv, .highlight .vi {
+    color: #19177C;
 }

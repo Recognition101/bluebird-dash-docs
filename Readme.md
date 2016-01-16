@@ -6,7 +6,7 @@ the documentation index that can be read by the OSX program
 [Dash](http://kapeli.com/dash).
 
 It pulls from 
-[this](https://github.com/petkaantonov/bluebird/blob/master/API.md) API 
+[this](http://bluebirdjs.com/docs/api-reference.html) API 
 Documentation file.
 
 ## Install
